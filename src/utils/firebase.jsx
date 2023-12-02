@@ -1,15 +1,17 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 
+
 const firebaseConfig = {
-    apiKey: "AIzaSyD0FWpZGz-nlsnJj6VvH5sfiC6N70OYfb8",
-    authDomain: "assignment-10ed0.firebaseapp.com",
-    projectId: "assignment-10ed0",
-    storageBucket: "assignment-10ed0.appspot.com",
-    messagingSenderId: "176983098158",
-    appId: "1:176983098158:web:9dd5714911a5a180e3f0bf",
-    measurementId: "G-P9G5N25YHM"
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket:import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId,
+    measurementId: import.meta.env.VITE_measurementId
   };
 
   const app = firebase.initializeApp(firebaseConfig);
   export const db = firebase.firestore(app);
+

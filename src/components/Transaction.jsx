@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { validateWalletAddress, validateAmount } from '../utils/validation';
+import { validateWalletAddress } from '../utils/validation';
 
 import { db } from '../utils/firebase';
 import { collection, addDoc } from 'firebase/firestore';
@@ -19,7 +19,8 @@ function Transaction() {
     }
   
     if (!validateWalletAddress(walletAddress)) {
-      setError('Invalid wallet address');
+      setError('Wallet Address should be a valid Ethereum address of 42 characters length and starts with 0x');
+
       return;
     }
   
